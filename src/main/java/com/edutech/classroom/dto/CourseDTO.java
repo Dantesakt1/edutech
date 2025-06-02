@@ -3,7 +3,8 @@ package com.edutech.classroom.dto;
 import com.edutech.classroom.entity.Course;
 import com.edutech.classroom.entity.CourseCategory;
 import com.edutech.classroom.entity.User;
-import jakarta.validation.constraints.NotNull;
+
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 
@@ -15,34 +16,34 @@ import java.time.LocalDate;
 public class CourseDTO {
     private Integer id;
 
-    @NotNull(message = "El título no puede estar vacío")
+    @NotBlank(message = "El título no puede estar vacío")
     @Size(max = 200, message = "El título no puede superar los 200 caracteres")
     private String title;
 
-    @NotNull(message = "La descripción no puede estar vacía")
+    @NotBlank(message = "La descripción no puede estar vacía")
     @Size(max = 800, message = "La descripción no puede superar los 800 caracteres")
     private String description;
 
-    @NotNull(message = "La categoría no puede estar vacía")
+    @NotBlank(message = "La categoría no puede estar vacía")
     private Integer categoryId;
 
-    @NotNull(message = "El gestor del curso no puede estar vacío")
+    @NotBlank(message = "El gestor del curso no puede estar vacío")
     private Integer managerId;
 
-    @NotNull(message = "El instructor del curso no puede estar vacío")
+    @NotBlank(message = "El instructor del curso no puede estar vacío")
     private Integer instructorId;
 
-    @NotNull(message = "La fecha de publicación no puede estar vacía")
+    @NotBlank(message = "La fecha de publicación no puede estar vacía")
     private LocalDate publishDate;
 
-    @NotNull(message = "El precio no puede estar vacío")
+    @NotBlank(message = "El precio no puede estar vacío")
     private BigDecimal price;
 
-    @NotNull(message = "La imagen no puede estar vacía")
+    @NotBlank(message = "La imagen no puede estar vacía")
     @Size(max = 255, message = "La URL de la imagen no puede superar los 255 caracteres")
     private String image;
 
-    @NotNull(message = "El estado no puede estar vacío")
+    @NotBlank(message = "El estado no puede estar vacío")
     @Size(max = 50, message = "El estado no puede superar los 50 caracteres")
     private String status;
 

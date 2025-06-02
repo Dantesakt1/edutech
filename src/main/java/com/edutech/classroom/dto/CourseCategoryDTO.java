@@ -1,7 +1,8 @@
 package com.edutech.classroom.dto;
 
 import com.edutech.classroom.entity.CourseCategory;
-import jakarta.validation.constraints.NotNull;
+
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 
@@ -10,10 +11,10 @@ import lombok.Data;
 public class CourseCategoryDTO {
 
     private Integer id;
-    @NotNull(message = "El nombre de la categoría no puede estar vacío")
+    @NotBlank(message = "El nombre de la categoría no puede estar vacío")
     @Size(max = 100, message = "No puede superar los 100 caracteres")
     private String name;
-    @NotNull(message = "La descripción de la categoría no puede estar vacía")
+    @NotBlank(message = "La descripción de la categoría no puede estar vacía")
     @Size(max = 800, message = "No puede superar los 800 caracteres")
     private String description;
 

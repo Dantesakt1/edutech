@@ -1,7 +1,8 @@
 package com.edutech.classroom.dto;
 
 import com.edutech.classroom.entity.DiscountCoupon;
-import jakarta.validation.constraints.NotNull;
+
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 
@@ -13,24 +14,24 @@ import java.time.LocalDate;
 public class DiscountCouponDTO {
     private Integer id;
 
-    @NotNull(message = "El código no puede estar vacío")
+    @NotBlank(message = "El código no puede estar vacío")
     @Size(max = 50, message = "El código no puede superar los 50 caracteres")
     private String code;
 
-    @NotNull(message = "La descripción no puede estar vacía")
+    @NotBlank(message = "La descripción no puede estar vacía")
     @Size(max = 800, message = "La descripción no puede superar los 800 caracteres")
     private String description;
 
-    @NotNull(message = "El porcentaje de descuento no puede estar vacío")
+    @NotBlank(message = "El porcentaje de descuento no puede estar vacío")
     private BigDecimal discountPercentage;
 
-    @NotNull(message = "La fecha de inicio no puede estar vacía")
+    @NotBlank(message = "La fecha de inicio no puede estar vacía")
     private LocalDate validFrom;
 
-    @NotNull(message = "La fecha de término no puede estar vacía")
+    @NotBlank(message = "La fecha de término no puede estar vacía")
     private LocalDate validUntil;
 
-    @NotNull(message = "El estado de activación no puede estar vacío")
+    @NotBlank(message = "El estado de activación no puede estar vacío")
     private Boolean isActive;
 
     public static DiscountCouponDTO fromEntity(DiscountCoupon entity) {

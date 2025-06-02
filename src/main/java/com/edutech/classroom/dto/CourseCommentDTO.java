@@ -3,7 +3,8 @@ package com.edutech.classroom.dto;
 import com.edutech.classroom.entity.Course;
 import com.edutech.classroom.entity.CourseComment;
 import com.edutech.classroom.entity.User;
-import jakarta.validation.constraints.NotNull;
+
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 import java.time.Instant;
@@ -12,19 +13,19 @@ import java.time.Instant;
 public class CourseCommentDTO {
     private Integer id;
 
-    @NotNull(message = "El Curso no puede estar vacío")
+    @NotBlank(message = "El Curso no puede estar vacío")
     private Integer courseId;
 
-    @NotNull(message = "El user no puede estar vacío")
+    @NotBlank(message = "El user no puede estar vacío")
     private Integer userId;
 
-    @NotNull(message = "El comentario no puede estar vacío")
+    @NotBlank(message = "El comentario no puede estar vacío")
     private String commentText;
 
-    @NotNull(message = "La clasificacion no puede estar vacía")
+    @NotBlank(message = "La clasificacion no puede estar vacía")
     private Integer rating;
 
-    @NotNull(message = "No puede estar vacío")
+    @NotBlank(message = "No puede estar vacío")
     private Instant createdAt;
 
     public static CourseCommentDTO fromEntity(CourseComment entity) {

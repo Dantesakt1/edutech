@@ -1,7 +1,8 @@
 package com.edutech.classroom.dto;
 
 import com.edutech.classroom.entity.Role;
-import jakarta.validation.constraints.NotNull;
+
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 
@@ -10,11 +11,11 @@ public class RoleDTO {
 
     private Integer id;
 
-    @NotNull(message = "El nombre del rol no puede estar vacío")
+    @NotBlank(message = "El nombre del rol no puede estar vacío")
     @Size(max = 50, message = "El nombre del rol no puede superar los 50 caracteres")
     private String name;
 
-    @NotNull(message = "La descripción del rol no puede estar vacía")
+    @NotBlank(message = "La descripción del rol no puede estar vacía")
     @Size(max = 800, message = "La descripción del rol no puede superar los 800 caracteres")
     private String description;
 

@@ -2,7 +2,8 @@ package com.edutech.classroom.dto;
 
 import com.edutech.classroom.entity.Course;
 import com.edutech.classroom.entity.CourseQuiz;
-import jakarta.validation.constraints.NotNull;
+
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 import java.time.Instant;
@@ -11,19 +12,19 @@ import java.time.Instant;
 public class CourseQuizDTO {
     private Integer id;
 
-    @NotNull(message = "El curso no puede estar vacío")
+    @NotBlank(message = "El curso no puede estar vacío")
     private Integer courseId;
 
-    @NotNull(message = "El titulo no puede estar vacío")
+    @NotBlank(message = "El titulo no puede estar vacío")
     private String title;
 
-    @NotNull(message = "La descripcion no puede estar vacío")
+    @NotBlank(message = "La descripcion no puede estar vacío")
     private String description;
 
-    @NotNull(message = "El tipo de quiz no puede estar vacío")
+    @NotBlank(message = "El tipo de quiz no puede estar vacío")
     private String quizType;
 
-    @NotNull(message = "No puede estar vacío")
+    @NotBlank(message = "No puede estar vacío")
     private Instant createdAt;
 
 
