@@ -5,6 +5,7 @@ import com.edutech.classroom.entity.CourseCategory;
 import com.edutech.classroom.entity.User;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 
@@ -24,19 +25,19 @@ public class CourseDTO {
     @Size(max = 800, message = "La descripción no puede superar los 800 caracteres")
     private String description;
 
-    @NotBlank(message = "La categoría no puede estar vacía")
+    @NotNull(message = "La categoría no puede estar vacía")
     private Integer categoryId;
 
-    @NotBlank(message = "El gestor del curso no puede estar vacío")
+    @NotNull(message = "El gestor del curso no puede estar vacío")
     private Integer managerId;
 
-    @NotBlank(message = "El instructor del curso no puede estar vacío")
+    @NotNull(message = "El instructor del curso no puede estar vacío")
     private Integer instructorId;
 
-    @NotBlank(message = "La fecha de publicación no puede estar vacía")
+    @NotNull(message = "La fecha de publicación no puede estar vacía")
     private LocalDate publishDate;
 
-    @NotBlank(message = "El precio no puede estar vacío")
+    @NotNull(message = "El precio no puede estar vacío")
     private BigDecimal price;
 
     @NotBlank(message = "La imagen no puede estar vacía")

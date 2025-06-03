@@ -4,6 +4,7 @@ import com.edutech.classroom.entity.Payment;
 import com.edutech.classroom.entity.User;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 
@@ -14,13 +15,13 @@ import java.time.Instant;
 public class PaymentDTO {
     private Integer id;
 
-    @NotBlank(message = "El usuario no puede estar vacío")
+    @NotNull(message = "El usuario no puede estar vacío")
     private Integer userId;
 
-    @NotBlank(message = "El monto no puede estar vacío")
+    @NotNull(message = "El monto no puede estar vacío")
     private BigDecimal amount;
 
-    @NotBlank(message = "La fecha de pago no puede estar vacía")
+    @NotNull(message = "La fecha de pago no puede estar vacía")
     private Instant paymentDate;
 
     @NotBlank(message = "El método de pago no puede estar vacío")

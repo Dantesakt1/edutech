@@ -4,6 +4,7 @@ import com.edutech.classroom.entity.Course;
 import com.edutech.classroom.entity.CourseContent;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Data
@@ -11,7 +12,7 @@ public class CourseContentDTO {
 
     private Integer id;
 
-    @NotBlank(message = "El curso no puede estar vacío")
+    @NotNull(message = "El curso no puede estar vacío")
     private Integer courseId;
 
     @NotBlank(message = "El titulo no puede estar vacío")
@@ -23,7 +24,7 @@ public class CourseContentDTO {
     @NotBlank(message = "La URL no puede estar vacía")
     private String url;
 
-    @NotBlank(message = "El curso no puede estar vacío")
+    @NotNull(message = "El curso no puede estar vacío")
     private Integer orderIndex;
 
     public static CourseContentDTO fromEntity(CourseContent entity) {

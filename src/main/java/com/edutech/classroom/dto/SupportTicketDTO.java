@@ -4,6 +4,7 @@ import com.edutech.classroom.entity.SupportTicket;
 import com.edutech.classroom.entity.User;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 
@@ -14,7 +15,7 @@ import java.time.Instant;
 public class SupportTicketDTO {
     private Integer id;
 
-    @NotBlank(message = "El usuario no puede estar vacío")
+    @NotNull(message = "El usuario no puede estar vacío")
     private Integer userId;
 
     private Integer supportId;
@@ -31,7 +32,7 @@ public class SupportTicketDTO {
     @Size(max = 20, message = "El estado no puede superar los 20 caracteres")
     private String status;
 
-    @NotBlank(message = "La fecha de creación no puede estar vacía")
+    @NotNull(message = "La fecha de creación no puede estar vacía")
     private Instant createdAt;
 
     private Instant closedAt;

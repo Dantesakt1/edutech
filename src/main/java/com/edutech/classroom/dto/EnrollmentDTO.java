@@ -5,6 +5,7 @@ import com.edutech.classroom.entity.Enrollment;
 import com.edutech.classroom.entity.User;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 
@@ -14,13 +15,13 @@ import java.time.Instant;
 public class EnrollmentDTO {
     private Integer id;
 
-    @NotBlank(message = "El estudiante no puede estar vacío")
+    @NotNull(message = "El estudiante no puede estar vacío")
     private Integer studentId;
 
-    @NotBlank(message = "El curso no puede estar vacío")
+    @NotNull(message = "El curso no puede estar vacío")
     private Integer courseId;
 
-    @NotBlank(message = "La fecha de inscripción no puede estar vacía")
+    @NotNull(message = "La fecha de inscripción no puede estar vacía")
     private Instant enrolledAt;
 
     @NotBlank(message = "El estado no puede estar vacío")

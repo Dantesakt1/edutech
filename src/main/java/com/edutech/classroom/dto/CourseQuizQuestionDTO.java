@@ -3,7 +3,7 @@ package com.edutech.classroom.dto;
 import com.edutech.classroom.entity.CourseQuiz;
 import com.edutech.classroom.entity.CourseQuizQuestion;
 
-import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 
@@ -39,10 +39,10 @@ public class CourseQuizQuestionDTO {
     @Size(max = 1, message = "No pueden haber más de 2 opciones correctas")
     private String correctOption;
 
-    @NotBlank(message = "El orden del índice no puede quedar nulo")
+    @NotNull(message = "El orden del índice no puede quedar nulo")
     private Integer orderIndex;
 
-    @NotBlank(message = "La fecha de creación es obligatoria")
+    @NotNull(message = "La fecha de creación es obligatoria")
     private Instant createdAt;
 
     public static CourseQuizQuestionDTO fromEntity(CourseQuizQuestion entity) {

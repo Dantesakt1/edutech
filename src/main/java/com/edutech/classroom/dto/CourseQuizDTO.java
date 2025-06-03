@@ -4,6 +4,7 @@ import com.edutech.classroom.entity.Course;
 import com.edutech.classroom.entity.CourseQuiz;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 import java.time.Instant;
@@ -12,7 +13,7 @@ import java.time.Instant;
 public class CourseQuizDTO {
     private Integer id;
 
-    @NotBlank(message = "El curso no puede estar vacío")
+    @NotNull(message = "El curso no puede estar vacío")
     private Integer courseId;
 
     @NotBlank(message = "El titulo no puede estar vacío")
@@ -24,7 +25,7 @@ public class CourseQuizDTO {
     @NotBlank(message = "El tipo de quiz no puede estar vacío")
     private String quizType;
 
-    @NotBlank(message = "No puede estar vacío")
+    @NotNull(message = "No puede estar vacío")
     private Instant createdAt;
 
 

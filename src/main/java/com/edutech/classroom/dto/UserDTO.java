@@ -4,6 +4,7 @@ import com.edutech.classroom.entity.Role;
 import com.edutech.classroom.entity.User;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 
@@ -31,10 +32,10 @@ public class UserDTO {
     @Size(max = 255, message = "La contraseña no puede superar los 255 caracteres")
     private String passwordHash;
 
-    @NotBlank(message = "El rol no puede estar vacío")
+    @NotNull(message = "El rol no puede estar vacío")
     private Integer roleId;
 
-    @NotBlank(message = "El estado activo no puede estar vacío")
+    @NotNull(message = "El estado activo no puede estar vacío")
     private Boolean isActive;
 
     private Instant createdAt;

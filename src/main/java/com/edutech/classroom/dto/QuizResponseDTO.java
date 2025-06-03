@@ -4,7 +4,7 @@ import com.edutech.classroom.entity.CourseQuiz;
 import com.edutech.classroom.entity.QuizResponse;
 import com.edutech.classroom.entity.User;
 
-import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 
@@ -15,10 +15,10 @@ import java.time.Instant;
 public class QuizResponseDTO {
     private Integer id;
 
-    @NotBlank(message = "El ID del quiz no puede estar vacío")
+    @NotNull(message = "El ID del quiz no puede estar vacío")
     private Integer quizId;
 
-    @NotBlank(message = "El ID del estudiante no puede estar vacío")
+    @NotNull(message = "El ID del estudiante no puede estar vacío")
     private Integer studentId;
 
     @Size(max = 1, message = "Solo puede seleccionar una opción")
@@ -30,7 +30,7 @@ public class QuizResponseDTO {
     @Size(max = 800, message = "La URL del trabajo no puede superar los 800 caracteres")
     private String assignmentUrl;
 
-    @NotBlank(message = "La fecha de entrega no puede estar vacía")
+    @NotNull(message = "La fecha de entrega no puede estar vacía")
     private Instant submittedAt;
 
     public static QuizResponseDTO fromEntity(QuizResponse entity) {

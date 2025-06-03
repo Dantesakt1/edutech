@@ -5,6 +5,7 @@ import com.edutech.classroom.entity.StudentMark;
 import com.edutech.classroom.entity.User;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 
@@ -16,19 +17,19 @@ import java.time.Instant;
 public class StudentMarkDTO {
     private Integer id;
 
-    @NotBlank(message = "El ID del quiz no puede estar vacío")
+    @NotNull(message = "El ID del quiz no puede estar vacío")
     private Integer quizId;
 
     @NotBlank(message = "El ID del estudiante no puede estar vacío")
     private Integer studentId;
 
-    @NotBlank(message = "La nota no puede estar vacía")
+    @NotNull(message = "La nota no puede estar vacía")
     private BigDecimal mark;
 
     @Size(max = 800, message = "Los comentarios no pueden superar los 800 caracteres")
     private String comments;
 
-    @NotBlank(message = "La fecha de calificación no puede estar vacía")
+    @NotNull(message = "La fecha de calificación no puede estar vacía")
     private Instant gradedAt;
 
     public static StudentMarkDTO fromEntity(StudentMark entity) {
